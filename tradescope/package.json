@@ -1,0 +1,13 @@
+{
+  "name": "tradescope-sim",
+  "version": "1.0.0",
+  "description": "TradeScope trading algorithm simulation bot",
+  "main": "tradescope-sim.js",
+  "scripts": {
+    "start": "node tradescope-sim.js",
+    "sim": "node tradescope-sim.js"
+  },
+  "engines": {
+    "node": ">=16"
+  }
+}
