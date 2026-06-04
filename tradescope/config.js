@@ -75,4 +75,33 @@ module.exports = {
     verbose:     true,   // Print per-bar DEBUG lines to console
     logEachTrade: true,  // Print a line for every BUY / SELL execution
   },
+
+  // ─── Live Mode (live-sim.js) ────────────────────────────────────────────────
+  //
+  //  live-sim.js fetches real-time data from Yahoo Finance — no files needed.
+  //  Sentiment is scored from Yahoo Finance news headlines by default.
+  //  Optionally wire in a third-party sentiment API by filling in an API key.
+  //
+  live: {
+    // How many calendar days of history to pull for indicator warm-up.
+    // Must be large enough for the longest indicator period (emaLongPeriod,
+    // rsiPeriod, volumeMaPeriod).  120 days is safe for default settings.
+    lookbackDays: 120,
+
+    // Where to write the daily signals JSON file.
+    outputFolder: '[ADD OUTPUT FOLDER HERE]',     // e.g. './results/live'
+
+    // ── Optional: Finnhub News Sentiment ──────────────────────────────────
+    // Free tier at https://finnhub.io — 60 req/min.
+    // Provides pre-computed sentiment scores; overrides keyword scoring when set.
+    finnhubApiKey: '[ADD FINNHUB API KEY HERE]',  // e.g. 'abc123xyz'
+
+    // ── Optional: Alpha Vantage News & Sentiment ───────────────────────────
+    // Free tier at https://www.alphavantage.co — 25 req/day.
+    alphaVantageApiKey: '[ADD ALPHA VANTAGE API KEY HERE]',
+
+    // ── Optional: NewsAPI headlines ────────────────────────────────────────
+    // Free tier at https://newsapi.org — 100 req/day, developer plan.
+    newsApiKey: '[ADD NEWSAPI KEY HERE]',
+  },
 };
